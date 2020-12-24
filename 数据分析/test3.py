@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 #y=np.exp(-x**2/2)
 
 #读取文件,返回数组 skiprow指跳过几行,delimiter确认分割符
-data=np.loadtxt('/Users/craft/资料/python/master/数据分析/20201223EuCd2P2_70V.txt',skiprows=1,delimiter=',')
+data=np.loadtxt('/Users/craft/资料/python/master/数据分析/20201223EuCd2P2_70V.txt',skiprows=1,delimiter=' ')
 
 x= data[:,0]
 y= data[:,1]
-
+ 
 fig=plt.figure(figsize=[4,4])#创建并返回一个图片对象
 sub=fig.add_subplot(111)# 行列位置
 

@@ -1,23 +1,31 @@
 #----------------------------------------------------#
 #龚毅
-#年份：12.24    时间：22.19
+#年份：12.25    时间：10:40
 #-----------------------------------------------------
-#版本 1.0
+#版本 1.0.1
+#取消了需要输入个数，按输入路径个数获取文件数
 #-----------------------------------------------------
-#问题：纵坐标显示不正确，标题不显示
+#问题：标题不显示
 import numpy as np
 import matplotlib.pyplot as plt
 #定义文件个数
-number=int(input('请输入文件个数：'))
+#number=int(input('请输入文件个数：'))
 x=[]
 y=[]
 dataname=[]
 name=[]
-
+number=0;
+for i in range(100):
+    #print('请输入第%d文件路径：'%(i+1))
+    dataname.append(input('请输入第%d个文件路径（输入N结束）：'%(i+1)))
+    if dataname[i]=='N':
+        break
+    else:
+        number=number+1
 #输入文件并初始化
 for i in range(number):
-    #print('请输入第%d文件路径：'%(i+1))
-    dataname.append(input('请输入第%d个文件路径：'%(i+1)))
+    # #print('请输入第%d文件路径：'%(i+1))
+    # dataname.append(input('请输入第%d个文件路径：'%(i+1)))
     data=np.loadtxt(dataname[i])
     x.append(data[:,0])
     y.append(data[:,1])
